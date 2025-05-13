@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String  @unique
+  password String
+  role     String  // 'User', 'BusinessOwner', 'Admin'
+  restaurants Restaurant[]
+  reviews     Review[]
+  bookings    Booking[]   // Relation to bookings
+  createdAt DateTime @default(now())
+}
+
+model Restaurant {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
+  address     String
+  zipcode     String
+  cuisine     String
+  priceRange  String 
+  ratings     Float
+  ownerId     Int?
+  owner       User?   @relation(fields: [ownerId], references: [id])
+  createdAt   DateTime @default(now())
+  reviews     Review[]
+  imageUrl    String
+  bookings    Booking[]
+}
+
+model Review {
+  id          Int     @id @default(autoincrement())
+  content     String
+  rating      Int
+  userId      Int
+  restaurantId Int
+  user        User     @relation(fields: [userId], references: [id])
+  restaurant  Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade) 
+  createdAt   DateTime @default(now())
+}
+
+model Booking {
+  id            Int        @id @default(autoincrement())
+  userId        Int?       // User who made the booking
+  user          User?      @relation(fields: [userId], references: [id])
+  customerName  String
+  customerEmail String
+  customerPhone String?
+  restaurantId  Int
+  restaurant    Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  date          DateTime
+  time          String
+  numberOfPeople Int
+  status        String     @default("pending") // pending, confirmed, cancelled
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+}
