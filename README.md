@@ -29,4 +29,4 @@ A full-stack web application for discovering, booking, and managing restaurants.
 
 
 ## Reports anD Diagrams 
-📁 [Download Reports and Diagrams Folder](https://drive.google.com/file/d/11qHJ5GJThoNxfLJ2O6lM-8RTOCJUZvwM/view?usp=share_link)
+📁 [Download Reports and Diagrams Folder] https://drive.google.com/drive/folders/1L5Zu-Yt1j6wQ_GCF0YtmMNaMFJc2pHC4?usp=share_link
