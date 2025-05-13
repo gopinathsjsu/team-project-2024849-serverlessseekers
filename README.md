@@ -28,5 +28,5 @@ A full-stack web application for discovering, booking, and managing restaurants.
 4) Rahul collaborated with Nitya on schema definitions and worked on setting up the admin panel structure. He was also involved in UI integration for dashboard elements and helped in feature testing and review workflows.
 
 
-## Reports anD Diagrams 
+## Reports, Outputs and Diagrams 
 📁 [Download Reports and Diagrams Folder] https://drive.google.com/drive/folders/1ku59gCjqIKsi1E-RtyoAtR-xgVbW3-Rk?usp=share_link
