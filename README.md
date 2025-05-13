@@ -1,6 +1,6 @@
 # Dine Reserve 
 TEAM : SERVERLESS SEEKERS 
-1) Pratik Kamanhalli Mallikarjuna
+1) Pratik Kamanahalli Mallikarjuna
 2) Nitya Reddy Yerram
 3) Dhruv Khut
 4) Rahul Dhingra
